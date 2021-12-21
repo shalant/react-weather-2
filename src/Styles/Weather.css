@@ -1,0 +1,32 @@
+.weather-container {
+    background: #3949ab;
+    box-shadow: 2px 4px 16px 0 rgba(0,0,0,0);
+    /* border: 2px solid purple; */
+    height: 525px;
+    width: 80%;
+    border-radius: 5px;
+    position: relative;
+    padding: 10px;
+}
+
+.weather-header h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-align: center; 
+}
+
+.weather-header div {
+    border-bottom: 2px solid #eee;
+    width: 80%;
+    margin: auto;
+
+}
+
+.search-input {
+    background: transparent;
+    border: none;
+    padding: 4px;
+    outline: none;
+    width: 100%;
+}
