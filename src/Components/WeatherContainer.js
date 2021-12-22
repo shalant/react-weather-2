@@ -2,10 +2,31 @@ import React, { useState } from 'react';
 import '../Styles/Weather.css'
 
 function WeatherContainer () {
-    const [searchQuery, setSearchQuery] = useState();
+    const [searchQuery, setSearchQuery] = useState('');
+    const [weatherData, setWeatherData] = useState({
+        temp: null,
+        humidity: null,
+        description: null,
+        city: null
+    });
+    const [isValidZipCode, setIsValidZipCode] =useState(true); 
 
     function updateSearchQuery(event){
-        setSearchQuery(event.target.value);
+        let zipCode = event.target.value;
+        let isValid = validateZipCode(zipCode)
+        setSearchQuery(zipCode);
+
+        if (isValid || zipCode === '' || isValid.length === 5) {
+            setIsValidZipCode(true);
+        } else {
+            setIsValidZipCode(false);
+
+        }
+    }
+
+    function validateZipCode(zipCode) {
+        let regex = /[0-9]{5}/;
+        return regex.test(zipCode);
     }
 
     return (
@@ -17,10 +38,18 @@ function WeatherContainer () {
                         placeholder='Zip Code'
                         className='search-input'
                         onChange={updateSearchQuery}
+                        maxLength='5'
                     />
-                    {/* <button></button> */}
+                    <button className='material-icons'>search</button>
                 </div>
             </header>
+            <p className='error'>{isValidZipCode ? '' : 'Invalid Zip Code'}</p>
+            <section className='weather-info'>
+                {weatherData.temp === null ? (
+                    <p>No Weather to Display<i className='material-icons'>wb_sunny</i></p>
+                ) : ''
+            }
+            </section>
         </section>
     )
 }

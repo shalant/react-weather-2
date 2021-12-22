@@ -13,3 +13,34 @@ body {
     justify-content: center;
     height: 100vh;
 }
+
+.weather-info {
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.weather-info i {
+    color: yellow;
+    position: relative;
+    top: 5px;
+    left: 5px;
+    animation: rotate 5s infinite linear;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: #EC7063;
+    font-size: 1.3rem;
+
+}

@@ -17,6 +17,7 @@
 }
 
 .weather-header div {
+    display: flex;
     border-bottom: 2px solid #eee;
     width: 80%;
     margin: auto;
@@ -29,4 +30,20 @@
     padding: 4px;
     outline: none;
     width: 100%;
+    color: #D5D8DC;
+    font-size: 1.2rem;
+}
+
+.weather-header button {
+    border: none;
+    background: transparent;
+    color: #17A5A9;
+    cursor: pointer;
+    outline: none;
+}
+
+.search-input::-webkit-input-placeholder {
+    font-size: 1.1rem;
+    color: #eee;
+    opacity: 0.5;
 }
