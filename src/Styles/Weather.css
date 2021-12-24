@@ -2,7 +2,7 @@
     background: #3949ab;
     box-shadow: 2px 4px 16px 0 rgba(0,0,0,0);
     /* border: 2px solid purple; */
-    height: 525px;
+    height: 600px;
     width: 80%;
     border-radius: 5px;
     position: relative;
@@ -21,7 +21,6 @@
     border-bottom: 2px solid #eee;
     width: 80%;
     margin: auto;
-
 }
 
 .search-input {
@@ -46,4 +45,40 @@
     font-size: 1.1rem;
     color: #eee;
     opacity: 0.5;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    margin-top: 100px;
+}
+
+.weather-info i {
+    color: yellow;
+    position: relative;
+    top: 5px;
+    left: 5px;
+    animation: rotate 5s infinite linear;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: #EC7063;
+    font-size: 1.3rem;
+}
+
+.header-description {
+    text-align: center;
 }

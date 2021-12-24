@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import '../Styles/Weather.css'
+import '../Styles/Weather.css';
+import WeatherInfo from './WeatherInfo';
 
 function WeatherContainer () {
     const API_KEY = 'b04b2a052fb4b71af764d1f2a6d8f3ab';
@@ -31,6 +32,10 @@ function WeatherContainer () {
     }
 
     function getWeatherData() {
+        if (!isValidZipCode || searchQuery === '') {
+            setIsValidZipCode(false);
+            return;
+        }
         fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${searchQuery},us&appid=${API_KEY}`)
         .then(response => response.json())
         .then(data => setWeatherData({
@@ -42,7 +47,7 @@ function WeatherContainer () {
     }
 
     function convertToFarenheit(temp) {
-        return (temp - 273.15) * (9.0 / 5.0) + 32;
+        return ((temp - 273.15) * (9.0 / 5.0) + 32).toFixed(0);
     }
 
     return (
@@ -66,7 +71,7 @@ function WeatherContainer () {
                 {weatherData.temp === null ? (
                     <p>No Weather to Display<i 
                     className='material-icons'>wb_sunny</i></p>
-                ) : ''
+                ) : <WeatherInfo data={weatherData} />
                 }
             </section>
         </section>
