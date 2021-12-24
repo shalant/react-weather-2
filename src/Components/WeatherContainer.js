@@ -10,15 +10,16 @@ function WeatherContainer () {
         description: null,
         city: null
     });
-    const [isValidZipCode, setIsValidZipCode] =useState(true); 
+    const [isValidZipCode, setIsValidZipCode] = useState(true); 
 
-    function updateSearchQuery(event){
+    function updateSearchQuery(event) {
         let zipCode = event.target.value;
         let isValid = validateZipCode(zipCode)
         setSearchQuery(zipCode);
 
-        if (isValid || zipCode === '' || isValid.length === 5) {
-            setIsValidZipCode(true);
+        if (isValid || zipCode === '' || 
+            isValid.length === 5) {
+                setIsValidZipCode(true);
         } else {
             setIsValidZipCode(false);
         }
@@ -63,9 +64,10 @@ function WeatherContainer () {
             <p className='error'>{isValidZipCode ? '' : 'Invalid Zip Code'}</p>
             <section className='weather-info'>
                 {weatherData.temp === null ? (
-                    <p>No Weather to Display<i className='material-icons'>wb_sunny</i></p>
+                    <p>No Weather to Display<i 
+                    className='material-icons'>wb_sunny</i></p>
                 ) : ''
-            }
+                }
             </section>
         </section>
     )
