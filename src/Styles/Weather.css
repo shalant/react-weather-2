@@ -1,12 +1,13 @@
 .weather-container {
     background: #3949ab;
-    box-shadow: 2px 4px 16px 0 rgba(0,0,0,0);
+    box-shadow: 2px 4px 16px 0 rgba(0,0,0,0.5);
     /* border: 2px solid purple; */
-    height: 600px;
+    height: 625px;
     width: 80%;
     border-radius: 5px;
     position: relative;
     padding: 10px;
+    margin: 1.5rem;
 }
 
 .weather-header h3 {
@@ -81,4 +82,47 @@
 
 .header-description {
     text-align: center;
+}
+
+.weather-info h3 {
+    margin-bottom: 0;
+}
+
+.degree-symbol::after {
+    content: '\00b0';
+}
+
+@media screen and (min-width: 700px) {
+    .weather-container {
+        height: 350px;
+        width: 70%;
+        margin-left: 9rem;
+        margin-right: 1rem;
+    }
+
+    .weather-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 25px;
+    }
+
+    .weather-header h3 {
+        margin: 0;
+    }
+
+    .weather-header div {
+        width: 50%;
+        margin: 0;
+    }
+
+    .weather-info {
+        height: 100px;
+        margin-top: 0;
+    }
+
+    .weather-data-flex {
+        display: flex;
+        flex-direction: row;
+    }
 }
