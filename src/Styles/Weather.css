@@ -8,6 +8,7 @@
     position: relative;
     padding: 10px;
     margin: 1.5rem;
+    margin-left: 1.755rem;
 }
 
 .weather-header h3 {
@@ -92,11 +93,19 @@
     content: '\00b0';
 }
 
+/* @media screen and (min-width: 500px) {
+    .weather-container {
+        height: 350px;
+        margin-left: 7rem;
+        width: 70%;
+    }
+} */
+
 @media screen and (min-width: 700px) {
     .weather-container {
         height: 350px;
-        margin-left: 9rem;
-        margin-right: 5rem;
+        margin-left: 7rem;
+        width: 70%;
     }
 
     .weather-header {
@@ -131,8 +140,8 @@
 @media screen and (min-width: 1000px) {
     .weather-container {
         width: 70%;
-        margin-left: 15rem;
-        margin-right: 5rem;
+        margin-left: 12rem;
+        margin-right: 7rem;
     }
 }
 
