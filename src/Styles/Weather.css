@@ -95,9 +95,8 @@
 @media screen and (min-width: 700px) {
     .weather-container {
         height: 350px;
-        width: 70%;
         margin-left: 9rem;
-        margin-right: 1rem;
+        margin-right: 5rem;
     }
 
     .weather-header {
@@ -118,11 +117,29 @@
 
     .weather-info {
         height: 100px;
-        margin-top: 0;
+        margin-top: 65px;
     }
 
     .weather-data-flex {
         display: flex;
         flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
     }
+}
+
+@media screen and (min-width: 1000px) {
+    .weather-container {
+        width: 70%;
+        margin-left: 15rem;
+        margin-right: 5rem;
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    .weather-container {
+        width: 50%;
+        margin-left: 25rem;
+    }
+    
 }
